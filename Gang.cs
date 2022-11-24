@@ -15,5 +15,22 @@ namespace PiratenGang_Beamer {
             p.SetGang ( meineGang );
             piraten.Add ( p );
         }
+
+        public void AddPirat ( List<Pirat> pl , Gang meineGang ) {
+            // sage jedem Pirat, in welcher Gang dieser ist
+            foreach ( Pirat pirat in pl ) {
+                pirat.SetGang ( meineGang );
+            }
+            // Aneinanderhängen der List pl an die Liste piraten
+            piraten.AddRange ( pl );
+        }
+
+        public void ZeigePiratenDerGang ( ) {
+            foreach ( Pirat einPirat in piraten ) {
+                Console.WriteLine ( einPirat.GetGang().GangId 
+                    +" " +einPirat.GetGang().Name +" " +einPirat.Name);
+            }
+        }
+
     }
 }
